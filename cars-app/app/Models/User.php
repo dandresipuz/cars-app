@@ -22,11 +22,12 @@ class User extends Authenticatable
         'apellido',
         'cedula',
         'departamento_id',
-        'ciudad_id',
+        'city_id',
         'telefono',
         'email',
         'habeas',
         'active',
+        'password',
     ];
 
     /**
@@ -51,10 +52,5 @@ class User extends Authenticatable
     public function departamento()
     {
         return $this->belongsTo('App\Models\Departamento');
-    }
-
-    public function ciudad()
-    {
-        return $this->belongsTo('App\Models\Ciudad');
     }
 }
