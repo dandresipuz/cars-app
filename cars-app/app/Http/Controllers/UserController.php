@@ -2,23 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\City;
+use App\Models\User;
+use App\Models\Departamento;
 use Illuminate\Http\Request;
 
-class CityController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function byDepartamento($id)
-    {
-        $cities = City::where('departamento_id', $id)->get();
-        return $cities;
-    }
-
     public function index()
     {
         //
@@ -31,7 +25,8 @@ class CityController extends Controller
      */
     public function create()
     {
-        //
+        $departamentos = Departamento::all();
+        return view('users.create')->with('departamentos', $departamentos);
     }
 
     /**
@@ -48,10 +43,10 @@ class CityController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\City  $city
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(City $city)
+    public function show(User $user)
     {
         //
     }
@@ -59,10 +54,10 @@ class CityController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\City  $city
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(City $city)
+    public function edit(User $user)
     {
         //
     }
@@ -71,10 +66,10 @@ class CityController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\City  $city
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, City $city)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -82,10 +77,10 @@ class CityController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\City  $city
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(City $city)
+    public function destroy(User $user)
     {
         //
     }

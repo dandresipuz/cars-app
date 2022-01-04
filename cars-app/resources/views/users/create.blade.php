@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('users.store') }}">
                             @csrf
 
                             <div class="row mb-3">
@@ -63,7 +63,8 @@
                                     class="col-md-4 col-form-label text-md-end">Departamento</label>
                                 <div class="col-md-6">
                                     <select name="departamento_id"
-                                        class="form-control @error('departamento_id') is-invalid @enderror">
+                                        class="form-select @error('departamento_id') is-invalid @enderror"
+                                        id="departamento">
                                         <option value="">Seleccionar Departamento...</option>
                                         @foreach ($departamentos as $departamento)
                                             <option value="{{ $departamento->id }}" @if ($departamento->id == old('departamento_id')) selected @endif>
@@ -83,7 +84,18 @@
                             <div class="row mb-3">
                                 <label for="city_id" class="col-md-4 col-form-label text-md-end">Ciudad</label>
                                 <div class="col-md-6">
+                                    <div class="col-md-6">
+                                        <select name="city_id" class="form-select @error('city_id') is-invalid @enderror"
+                                            id="city">
+                                            <option value="">Seleccionar ciudad...</option>
+                                        </select>
 
+                                        @error('city_id')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
 
