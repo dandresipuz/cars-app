@@ -24,7 +24,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('users', 'App\Http\Controllers\UserController')->only('create', 'store')->names('users');
+
+// Excel export
 Route::get('users/export/excel', 'App\Http\Controllers\UserController@excel');
 Route::get('departamentos/export/excel', 'App\Http\Controllers\DepartamentoController@excel');
+Route::get('cities/export/excel', 'App\Http\Controllers\CityController@excel');
+
+// Winner
 Route::get('users/win', 'App\Http\Controllers\UserController@userWin');
+
+// Ciudades en base al departamento ID
 Route::get('departamento/{id}/cities', 'App\Http\Controllers\CityController@byDepartamento');

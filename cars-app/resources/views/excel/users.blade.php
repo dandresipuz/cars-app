@@ -7,6 +7,7 @@
             <th>Departamento</th>
             <th>Teléfono</th>
             <th>Email</th>
+            <th>Fecha de registro</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
                 <td>{{ $user->departamento->nombre }}</td>
                 <td>{{ $user->telefono }}</td>
                 <td>{{ $user->email }}</td>
+                <td>{{ $user->created_at }}</td>
             </tr>
         @endforeach
     </tbody>

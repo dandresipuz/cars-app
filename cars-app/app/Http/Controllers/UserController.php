@@ -37,6 +37,8 @@ class UserController extends Controller
     {
         $user = User::orderByRaw("RAND()")->limit(1)->pluck('id');
         $userData = DB::table('users')->where('id', $user)->get();
+        $userDisable = DB::table('users')->where('id', $user)
+            ->update(['active' => 0]);
         // dd($userData);
         return view('users.show')->with('userData', $userData);
     }

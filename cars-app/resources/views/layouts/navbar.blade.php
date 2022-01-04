@@ -24,7 +24,7 @@
                         <div class="dropdown-menu" style="">
                             <a class="dropdown-item" href="{{ url('users/export/excel') }}">Usuarios</a>
                             <a class="dropdown-item" href="{{ url('departamentos/export/excel') }}">Departamentos</a>
-                            <a class="dropdown-item" href="{{ url('users/export/excel') }}">Ciudades</a>
+                            <a class="dropdown-item" href="{{ url('cities/export/excel') }}">Ciudades</a>
                     </li>
 
                     @if (Route::has('register'))
