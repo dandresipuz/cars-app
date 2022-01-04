@@ -18,6 +18,15 @@
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
                 @guest
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Exportar</a>
+                        <div class="dropdown-menu" style="">
+                            <a class="dropdown-item" href="{{ url('users/export/excel') }}">Usuarios</a>
+                            <a class="dropdown-item" href="{{ url('departamentos/export/excel') }}">Departamentos</a>
+                            <a class="dropdown-item" href="{{ url('users/export/excel') }}">Ciudades</a>
+                    </li>
+
                     @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="btn btn-info" href="{{ route('users.create') }}">Registrate</a>
