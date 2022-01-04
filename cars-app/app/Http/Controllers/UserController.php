@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\UserExport;
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use App\Models\Departamento;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $user = User::create($request->all());
         return redirect()->back()->with('message', $user->nombre . ' ' . $user->apellido . ' fuiste registrado con exito');
