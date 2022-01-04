@@ -84,18 +84,16 @@
                             <div class="row mb-3">
                                 <label for="city_id" class="col-md-4 col-form-label text-md-end">Ciudad</label>
                                 <div class="col-md-6">
-                                    <div class="col-md-6">
-                                        <select name="city_id" class="form-select @error('city_id') is-invalid @enderror"
-                                            id="city">
-                                            <option value="">Seleccionar ciudad...</option>
-                                        </select>
+                                    <select name="city_id" class="form-select @error('city_id') is-invalid @enderror"
+                                        id="city">
+                                        <option value="">Seleccionar ciudad...</option>
+                                    </select>
 
-                                        @error('city_id')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
+                                    @error('city_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -130,17 +128,22 @@
                             </div>
 
                             <div class="row mb-3">
-                                <div class="col-mb-8">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                            name="habeas">
-                                        <label class="form-check-label" for="habeas">
-                                            “Autorizo el tratamiento de mis datos de acuerdo con la
-                                            finalidad establecida en la política de protección de datos personales”. Haga
-                                            clic
-                                            aquí
-                                        </label>
-                                    </div>
+                                <label for="habeas" class="col-md-4 col-form-label text-md-end">Habeas data</label>
+                                <div class="col-md-6">
+                                    <p> “Autorizo el tratamiento de mis datos de acuerdo con la
+                                        finalidad establecida en la política de protección de datos personales”. Haga
+                                        clic</p>
+                                    <select name="habeas" class="form-select @error('habeas') is-invalid @enderror">
+                                        <option value="">Seleccione...</option>
+                                        <option value="1" @if (old('habeas') == '1') selected @endif>Si</option>
+                                        <option value="0" @if (old('habeas') == '0') selected @endif>No</option>
+                                    </select>
+
+                                    @error('habeas')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 

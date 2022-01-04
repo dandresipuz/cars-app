@@ -27,7 +27,21 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/cities.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            @if (session('message'))
+                Swal.fire({
+                title: 'Felicitaciones',
+                text: "{{ session('message') }}",
+                icon: 'success',
+                confirmButtonColor: '#1e5f74',
+                confirmButtonText: 'Aceptar'
+                });
+            @endif
+        });
+    </script>
 
 </body>
 
