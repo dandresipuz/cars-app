@@ -21,6 +21,14 @@
                     </li>
                 </ol>
             </nav>
+            <a class="btn btn-sm btn-success" href="{{ url('users/export/excel') }}"><i
+                    class="fas fa-fw fa-file-excel"></i>
+                Exportar usuarios</a>
+            <a class="btn btn-sm btn-warning" href="{{ url('users/export/excel') }}"><i
+                    class="fas fa-fw fa-file-excel"></i>
+                Exportar departamentos</a>
+            <a class="btn btn-sm btn-info" href="{{ url('users/export/excel') }}"><i class="fas fa-fw fa-file-excel"></i>
+                Exportar ciudades</a>
             <hr>
         </div>
     </div>
